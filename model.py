@@ -3,6 +3,7 @@ from keras.models import Sequential
 from keras.optimizers import Adam,SGD
 from keras.datasets import cifar10
 from keras.activations import relu
+from keras.losses import sparse_categorical_crossentropy
 from keras.utils import to_categorical
 import tensorflow as tf
 
@@ -40,3 +41,4 @@ model.compile(
 
 history=model.fit(x_train,y_train,epochs=20,batch_size=64,verbose=1)
 model.evaluate(x_test,y_test,verbose=1)
+model.save("Image-Classifier\model.keras")
